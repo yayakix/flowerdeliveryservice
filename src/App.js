@@ -4,19 +4,15 @@ import Logobox from './components/Logobox';
 import Flowerbox from './components/Flowerbox';
 import Footer from './components/Footer';
 
-function makeBox(data) {
-  return (
-    <Flowerbox
-      name={data.name}
-      price={data.price}
-      image={data.image}
-      tags={data.tags}
-    />
-  );
-}
 
 function App() {
 
+  const flowerbox = data.map((ele, index) => {
+    return ( <Flowerbox
+      key={index}
+      {...ele}
+    />)
+  } )
 
   return (
     <div className="app">
@@ -24,7 +20,7 @@ function App() {
   <Logobox/>
 
   <div className='container'>
-    {data.map(makeBox)}
+    {flowerbox}
   </div>
   
     </div>
